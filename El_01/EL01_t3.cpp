@@ -89,13 +89,10 @@ public:
 		}
 
 		if (LoopDecimal=="") {
-			bool empty = 1;
-			for (unsigned i = 0; i < nonLoopDecimal.length(); i++) {
-				if (nonLoopDecimal[i] != '0') {
-					empty = 0;
-				}
+			while ( nonLoopDecimal[ nonLoopDecimal.length() -1]=='0' )
+			{
+				nonLoopDecimal.pop_back();
 			}
-			if(empty)nonLoopDecimal = "";
 		}
 		return;
 	}
@@ -131,10 +128,11 @@ public:
 };
 
 
+
 problem03 myObject[300];
 int main() {
 
-	bool you_are_testing_now = 1;
+	bool you_are_testing_now = 0;
 
 	int numb;//ÐÐ
 	cin >> numb;//ÐÐ
